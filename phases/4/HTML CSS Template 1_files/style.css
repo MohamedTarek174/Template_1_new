@@ -1,0 +1,437 @@
+/* General css style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* css 3 */
+}
+.clear{
+    clear: both;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+a{
+    text-decoration: none;
+}
+button{
+    font-family: inherit;
+}
+.section-header{
+    text-align: center;
+}
+.section-header .section-title{
+    font-size: 38px;
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+.section-header .line{
+    display: block;
+    height: 3px;
+    width: 60px;
+    margin: 5px auto 70px auto;
+    background-color: #6195ff;
+    border-radius:2px ;
+}
+.pd-y{
+    padding: 120px 0px;
+}
+.ltr-effect{
+    position: relative;
+}
+.ltr-effect::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    background: #333;
+    top:0 ;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: width .5s;
+    z-index: -1;
+    opacity: 1;
+    
+    
+}
+.ltr-effect:hover:after{
+    width: 100%;
+
+}
+
+
+/*------------------------------------------------------------------*/
+/* -------------- Header --------------------- */
+.container {
+    width: 80%;
+    margin: auto;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+.header .logo{
+    width: 40%;
+    float: left;
+}
+.header .logo img{
+    width: 25%;
+    margin-top:8px ;
+}
+
+.header .nav{
+    width: 60%;
+    float: left;
+    list-style: none;
+    text-align: right;
+    height: 100px;
+
+}
+.header .nav > li{
+    display:inline-block;
+    text-align: right;
+}
+.header .nav > li >a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 14px 12px 2px ;
+    display: block;
+}
+.header .nav > li > a:after , .header .nav > li> a.active:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #6195ff;
+    transition: .5s;
+    margin-top: 3px;
+}
+.header .nav > li >a:hover::after{
+    width: 100%;
+}
+.header .nav > li >a.active:after{
+    width: 100%;
+}
+.dropdown {
+    position: relative;
+
+}
+.dropdown-menu {
+    position: absolute;
+    background-color: #6195ff;
+    width: 150px;
+    text-align: center;
+    display: block;
+    left: -80%;
+    top: 100%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ,visbility 0.5s;
+
+
+
+}
+.dropdown-menu a{
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* --------------- Home section --------------------- */
+.home {
+    height: 100vh;
+    background-image: url(../images/background/background1.webp);
+    background-size: cover;
+    position: relative;
+}
+.home-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 65%;
+}
+.h1class{
+    color: white;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    
+}
+.home .phome{
+    font-size: 22px;
+    padding: 15px 0;
+    margin: 0;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1.5;
+
+}
+.home .btn{
+    width: 160px;
+    padding: 15px 0px;
+    border-radius: 5px ;
+    border: 0cm;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+.home .btn-start{
+    margin-right:10px ;
+    background-color: white;
+} 
+.home .btn-learn{
+    background-color: #6195ff;
+    color: white;
+}
+.hover-opacity{
+    transition: .4s;
+}
+.hover-opacity:hover{
+    opacity: 0.7;
+}
+
+/* --------------- About section -------------------- */
+.about-item-title{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    transition: color .5s;
+}
+.about-item-desc{
+    line-height:1.6 ;
+    font-size: large;
+    color: #999;
+}
+.about-item{
+    width: 30%;
+    float: left;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    padding: 45px 20px;
+}
+.about-item.mg{
+    margin: 0 2.5% 0 5%;
+}
+.about-item.mg2{
+    margin: 0 2.5% 0 0;
+}
+.about-item .icon{
+    margin-bottom: 10px;
+    color: #6195ff;
+}
+.about-item-link{
+    color: #6195ff;
+    text-transform: capitalize;
+}
+.about-item:hover .about-item-title{
+    color: white;
+}
+/* --------------- portofolio section --------------- */
+
+.portofolio{
+    background-color: #f9f9f9;
+}
+.portofolio-item{
+    width: 30%;
+    float: left;
+    position: relative;
+    padding: 20px;
+}
+.portofolio-item .layer-portofolio{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 90%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    opacity: 0;
+    transition:  .5s;
+    visibility: hidden;
+}
+.portofolio-item img{
+    width: 100%;
+    margin-bottom :40px ;
+}
+.portofolio-item.m2 ,.portofolio-item.m5{
+    margin: 0 5% 0 5% ;
+}
+
+.layer-info{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 35px;
+    height: 170px;
+
+}
+
+.layer-portofolio .category{
+    text-transform: uppercase;
+    color: #6195ff;
+    font-size: large;
+    position: relative;
+    margin-top:5px ;
+    display: block;
+    transition: margin-top .5s;
+
+
+}
+.layer-portofolio-content{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    top: 5px;
+    transition: top .5s;
+
+
+}
+.layer-info a  {
+    background: #6195ff;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    visibility: hidden;
+    transition: top visibility 1.4s;
+
+
+}
+
+.portofolio-item:hover .layer-portofolio{
+    opacity: 1;
+    visibility: visible;
+}
+
+.portofolio-item:hover .layer-portofolio-content,
+.portofolio-item:hover .layer-info a{
+    top: 0;
+    visibility: visible;
+}
+.portofolio-item:hover .layer-portofolio .category{
+    margin-top: 0;
+}
+/* --------------- offer section ------------------ */
+.offer-content{
+    overflow: hidden;
+}
+.offer-item{
+    width: 30%;
+    float: left;
+    border: #e8e8e8 solid 1px;
+    padding: 30px 15px 30px 70px;
+    position: relative;
+}
+.offer-item.mg2 ,.offer-item.mg5{
+    margin: 0 5%;
+}
+.offer-item.mg5,
+.offer-item.mg4,
+.offer-item.mg6{
+    margin-top: 30px;
+}
+.offer-item i{
+    position: absolute;
+    top : 40px;
+    left: 15px;
+    font-size: 32px;
+    color:#6195ff;
+}
+.offer-item-title{
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    color: #333;
+    transition: color .5s;
+}
+.offer-item-desc{
+    text-transform: capitalize;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #999;
+}
+.offer-item:hover .offer-item-title{
+    color: #e8e8e8;
+}
+/* ------------------ service section --------------- */
+
+
+.service .section-header{
+    text-align: left;
+}
+.service .line{
+    margin-right: 100%;
+    width: 38px;
+    margin-top: 15px;
+}
+.service-item-desc{
+    color: #999;
+    line-height: 28px;
+    text-transform: capitalize;
+
+}
+.service-item{
+    width: 50%;
+    float: left;
+}
+.service .list li{
+    list-style-type: none;
+    color: #999;
+    margin: 15px 0px;
+}
+.service .list .fa{
+    color: #6195ff;
+    border: #6195ff solid 1px;
+    border-radius: 50%;
+    padding: 5px;
+}
+.service-item-img .service-img{
+    width: 90%;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+.service-bullets{
+    list-style: none;
+    text-align: center;
+}
+
+.service-bullets li{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #e8e8e8;
+    border-radius: 50%;
+    margin: 10px 3px;
+}
+.service-bullets li.service-first-icon{
+    background-color: #6195ff;
+}
+.service-bullets li:hover{
+    background-color: #6195ff;
+}
+
+
+/* --------------- Prices section ------------------- */
+/* ---------------Team section ---------------------- */
+/* --------------- Blog page ------------------------ */
+/* --------------- Contact section -------------------*/

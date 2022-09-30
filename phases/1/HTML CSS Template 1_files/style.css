@@ -1,0 +1,168 @@
+/* General css style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* css 3 */
+}
+.clear{
+    clear: both;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+/*------------------------------------------------------------------*/
+/* -------------- Header --------------------- */
+.container {
+    width: 80%;
+    margin: auto;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+.header .logo{
+    width: 40%;
+    float: left;
+}
+.header .logo img{
+    width: 25%;
+    margin-top:8px ;
+}
+
+.header .nav{
+    width: 60%;
+    float: left;
+    list-style: none;
+    text-align: right;
+    height: 100px;
+
+}
+.header .nav > li{
+    display:inline-block;
+    text-align: right;
+}
+.header .nav > li >a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 14px 12px 2px ;
+    display: block;
+}
+.header .nav > li > a:after , .header .nav > li> a.active:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #6195ff;
+    transition: .5s;
+    margin-top: 3px;
+}
+.header .nav > li >a:hover::after{
+    width: 100%;
+}
+.header .nav > li >a.active:after{
+    width: 100%;
+}
+.dropdown {
+    position: relative;
+
+}
+.dropdown-menu {
+    position: absolute;
+    background-color: #6195ff;
+    width: 150px;
+    text-align: center;
+    display: block;
+    left: -80%;
+    top: 100%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ,visbility 0.5s;
+
+
+
+}
+.dropdown-menu a{
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* --------------- Home section --------------------- */
+.home {
+    height: 100vh;
+    background-image: url(../images/background/background1.webp);
+    background-size: cover;
+    position: relative;
+}
+.home-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 65%;
+}
+.h1class{
+    color: white;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    
+}
+.home .phome{
+    font-size: 22px;
+    padding: 15px 0;
+    margin: 0;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1.5;
+
+}
+.home .btn{
+    width: 160px;
+    padding: 15px 0px;
+    border-radius: 5px ;
+    border: 0cm;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+.home .btn-start{
+    margin-right:10px ;
+    background-color: white;
+} 
+.home .btn-learn{
+    background-color: #6195ff;
+    color: white;
+}
+.hover-opacity{
+    transition: .4s;
+}
+.hover-opacity:hover{
+    opacity: 0.7;
+}
+
+/* --------------- About section -------------------- */
+/* --------------- portofolio section --------------- */
+/* --------------- Service section ------------------ */
+/* --------------- Prices section ------------------- */
+/* ---------------Team section ---------------------- */
+/* --------------- Blog page ------------------------ */
+/* --------------- Contact section -------------------*/
